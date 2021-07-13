@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {
-    Container,
-    Category,
-    Icon
+  Container,
+  Category,
+  Icon
 } from './styles';
 
 interface Props {
@@ -11,10 +11,10 @@ interface Props {
 }
 
 export function CategorySelect({ title } : Props) {
-    return(
-        <Container>
-            <Category>{title}</Category>
-            <Icon name="chevron-down"/>
-        </Container>
-    );
+  return(
+    <Container>
+      <Category>{title}</Category>
+      <Icon name="chevron-down"/>
+    </Container>
+  );
 }
