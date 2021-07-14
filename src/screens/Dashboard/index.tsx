@@ -164,7 +164,7 @@ export function Dashboard() {
                 />
                 <User>
                   <UserGreeting>Olá,</UserGreeting>
-                  <UserName>Rodrigo</UserName>
+                  <UserName>Renato</UserName>
                 </User>
               </UserInfo>
 
