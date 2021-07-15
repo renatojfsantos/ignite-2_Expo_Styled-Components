@@ -9,8 +9,8 @@ import React, {
 const { CLIENT_ID } = process.env;
 const { REDIRECT_URI } = process.env;
 
-import * as AuthSession from 'expo-auth-session';
 // import * as Google from 'expo-google-app-auth';
+import * as AuthSession from 'expo-auth-session';
 import * as AppleAuthentication from 'expo-apple-authentication';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -61,13 +61,6 @@ function AuthProvider({ children }: AuthProviderProps) {
         const response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${params.access_token}`);
         const userInfo = await response.json();
 
-        // setUser({
-        //   id: userInfo.id,
-        //   email: userInfo.email,
-        //   name: userInfo.given_name,
-        //   photo: userInfo.picture,
-        // });
-        
         const userLogged = {
           id: userInfo.id,
           email: userInfo.email,
@@ -83,32 +76,6 @@ function AuthProvider({ children }: AuthProviderProps) {
       throw new Error(error)
     }
   }
-
-  // async function signInWithGoogle() {
-  //   try {
-  //     const result = await Google.logInAsync({
-  //       iosClientId: '123',
-  //       androidClientId: '1',
-  //       scopes: ['profile', 'email']
-  //     });
-
-  //     if(result.type === 'success') {
-  //       const userLogged = {
-  //         id: String(result.user.id),
-  //         email: result.user.email!,
-  //         name: result.user.name!,
-  //         photo: result.user.photoUrl!
-  //       };
-
-  //       setUser(userLogged);
-  //       await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged));
-  //     }
-
-  //   } catch (error) {
-  //     throw new Error(error)
-  //   }
-  // }
-  
 
   async function signInWithApple() {
     try {
