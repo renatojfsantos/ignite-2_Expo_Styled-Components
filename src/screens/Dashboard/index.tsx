@@ -143,8 +143,25 @@ export function Dashboard() {
   useFocusEffect(useCallback(() => {
     loadTransactions();
   },[]));
-  
 
+  // useEffect(() => {
+  //   const dataKey = '@gofinances:transactions';
+
+  //   async function loadData() {
+  //     const data = await AsyncStorage.getItem(dataKey);
+  //     console.log(JSON.parse(data!));
+  //   }
+
+  //   loadData();
+
+  //   async function removeAll() {
+  //     await AsyncStorage.removeItem(dataKey);
+  //   }
+
+  //   removeAll();
+
+  // },[]);
+  
   return (
     <Container>
       {
